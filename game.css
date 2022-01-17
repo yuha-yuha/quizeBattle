@@ -1,5 +1,6 @@
 body {
-    background-image: url("mori.png");
+    background-image: url("mori2.png");
+    background-size: contain;
     font-family: "Nico Moji";
 }
 
