@@ -48,7 +48,7 @@
         {
                 var ans = document.getElementById("ans").value;
 
-                if(ans == quizeList[no].answer){
+                if(ans == quizeList[no % quizeList.length].answer){
                     output = "正解";
                 }
 
