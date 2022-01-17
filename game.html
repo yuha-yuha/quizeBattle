@@ -39,9 +39,27 @@
         ]
 
         
-        function quize() {
+        function quize() 
+        {
                 document.getElementById("question").innerHTML = quizeList[no % quizeList.length].quizes;
+        }
+
+        function judgment() 
+        {
+                var ans = document.getElementById("ans").value;
+
+                if(ans == quizeList[no].answer){
+                    output = "正解";
+                }
+
+                else{
+                    output = "不正解";
+                }
+
+                document.getElementById("output_judgment").innerHTML = output;
+
                 no++;
+                quize();
         }
     </script>
 </head>
@@ -53,7 +71,7 @@
         </div>
 
         <div class="BattleFielde">
-            Top
+            <p id="output_judgment"></p>
         </div>
 
         <div class="mainGame">
@@ -62,6 +80,6 @@
             <button onclick="">決定</button>
         </div>
     </div>
-    ja
+    
 </body>
 </html>
