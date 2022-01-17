@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
     <title>クイズバトル!!!</title>
     <script>
+
         function arrayShuffle(array)
         {
             for (var i = (array.length - 1); 0 < i; i--){
@@ -19,6 +21,7 @@
             return array;
         }
 
+        
         var no = 0;
         var quizeList = [
             {
@@ -28,26 +31,32 @@
             {
                 quizes: "CHUNITH 現15で一番古い楽曲",
                 answer: "怒槌"
+            },
+            {
+                quizes: "スカイフェザーの14+の曲",
+                answer: "Glorious Crown"
             }
         ]
 
-        arrayShuffle(quizeList);
+        
         function quize() {
-            if (no < quizeList.length){
-                document.getElementById("question").innerHTML = quizeList[no].quizes;
-            }
+                document.getElementById("question").innerHTML = quizeList[no % quizeList.length].quizes;
+                no++;
         }
     </script>
 </head>
-<body>
+<body onload="quize()">
+    
     <div class="grid-area">
-        <div class="top-area">
-            Top
-        </div>
+            <div class="top-area">
+                Top
+            </div>
 
-        <div class="bottom-area">
-            Bottom
-        </div>
+            <div class="bottom-area">
+                <div id="question"></div>
+                <input type="text" id="ans" placeholder="答えを入力">
+                <button onclick="">決定</button>
+            </div>
     </div>
     
 </body>
