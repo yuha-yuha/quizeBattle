@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズバトル!!!</title>
+    <script>
+        function arrayShuffle(array)
+        {
+            for (var i = (array.length - 1); 0 < i; i--){
+                var r = Math.floor(Math.random() * (i + 1));
+
+                var tmp = array[i];
+                array[i] = array[r];
+                array[r] = array[i];
+            }
+
+            return array;
+        }
+
+        var no = 0;
+        var quizeList = [
+            {
+                quizes: "CHUNITHM PRADISE LOSTにて登場した最多ノーツになった15",
+                answer: "祈 -我ら神祖と歩むものなり-"
+            },
+            {
+                quizes: "CHUNITH 現15で一番古い楽曲",
+                answer: "怒槌"
+            }
+        ]
+
+        arrayShuffle(quizeList);
+        function quize() {
+            if (no < quizeList.length){
+                document.getElementById("question").innerHTML = quizeList[no].quizes;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
