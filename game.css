@@ -1,5 +1,6 @@
 body {
-    background-image: url("mori.png") ;
+    background-image: url("mori.png");
+    font-family: "Nico Moji";
 }
 
 .grid-area{
