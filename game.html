@@ -9,7 +9,8 @@
     <title>クイズバトル!!!</title>
     <script src="game.js"></script>
 </head>
-<body onload="quize()">
+
+<body onload="quize();showHP()">
     
     <div class="grid-area">
         <div class="backsite">
@@ -25,6 +26,7 @@
             <div id="question"></div>
             <input type="text" id="ans" placeholder="答えを入力">
             <button onclick="judgment()">決定</button>
+            <div id="playerHP"></div>
         </div>
     </div>
     

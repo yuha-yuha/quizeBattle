@@ -17,7 +17,8 @@ var quizeList = [
 
 var enemys = [
     {
-        HP: 100
+        HP: 100,
+        Attack: 20
     }
 ]
 
@@ -26,10 +27,21 @@ var player = {
     Attack: 30
 }
 
+function showHP(){
+    document.getElementById("playerHP").innerHTML = "あなたのHP:" + player.HP;
+}
+
 
 function PlayersAttack()
 {
     enemys[0].HP -= player.Attack;
+    showHP();
+}
+
+function EnemysAttack()
+{
+    player.HP -= enemys[0].Attack;
+    showHP();
 }
 
 function quize() 
@@ -48,6 +60,7 @@ function judgment()
 
         else{
             output = "不正解";
+            EnemysAttack();
         }
 
         document.getElementById("output_judgment").innerHTML = output;
@@ -66,7 +79,8 @@ function judgment()
             quize();
         }
 
-        var answ = document.getElementById("ans").value = "";
+        var ans = document.getElementById("ans").value = "";
+
 }
 
 function PlayersAttack()
