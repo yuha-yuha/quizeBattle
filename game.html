@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
     <link rel="stylesheet" href="game.css">
     <title>クイズバトル!!!</title>
-    <script src="game.js"></script>
+    
 </head>
 
 <body onload="quize();showHP()">
@@ -22,13 +22,15 @@
             <p id="ProgressReport"></p>
         </div>
 
-        <div class="mainGame">
+        <div id="MainGame" class="mainGame" >
             <div id="question"></div>
             <input type="text" id="ans" placeholder="答えを入力">
             <button onclick="judgment()">決定</button>
             <div id="playerHP"></div>
         </div>
     </div>
+
+    <script src="game.js"></script>
     
 </body>
 </html>
